@@ -3,6 +3,9 @@
   "files": [
     "index-production.html",
     "script.js",
-    "my-customer.html"
+    "template1.html",
+    "template2.html",
+    "animations.css",
+    "protractor.js"
   ]
 }

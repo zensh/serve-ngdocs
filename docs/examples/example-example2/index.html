@@ -7,41 +7,17 @@
   
 
   <script src="../../../angular.min.js"></script>
-  <script src="script.js"></script>
+  <script src="../../../angular-animate.js"></script>
   
 
   
 </head>
-<body >
-  <div ng-app="ngAppStrictDemo" ng-strict-di>
-    <div ng-controller="GoodController1">
-        I can add: {{a}} + {{b}} =  {{ a+b }}
-
-        <p>This renders because the controller does not fail to
-           instantiate, by using explicit annotation style (see
-           script.js for details)
-        </p>
-    </div>
-
-    <div ng-controller="GoodController2">
-        Name: <input ng-model="name"><br />
-        Hello, {{name}}!
-
-        <p>This renders because the controller does not fail to
-           instantiate, by using explicit annotation style
-           (see script.js for details)
-        </p>
-    </div>
-
-    <div ng-controller="BadController">
-        I can add: {{a}} + {{b}} =  {{ a+b }}
-
-        <p>The controller could not be instantiated, due to relying
-           on automatic function annotations (which are disabled in
-           strict mode). As such, the content of this section is not
-           interpolated, and there should be an error in your web console.
-        </p>
-    </div>
-</div>
+<body ng-app="ngAnimate">
+   <p>
+   <input type="button" value="set" ng-click="myCssVar='css-class'">
+   <input type="button" value="clear" ng-click="myCssVar=''">
+   <br>
+   <span ng-class="myCssVar">CSS-Animated Text</span>
+ </p>
 </body>
 </html>

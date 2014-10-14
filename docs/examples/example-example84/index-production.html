@@ -5,15 +5,13 @@
   <title>Example - example-example84-production</title>
   
 
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.17/angular.min.js"></script>
-  <script src="script.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/null/angular.min.js"></script>
   
 
   
 </head>
-<body ng-app="docsIsolationExample">
-    <div ng-controller="Controller">
-    <my-customer info="naomi"></my-customer>
-  </div>
+<body ng-app="">
+    <div>Normal: {{1 + 2}}</div>
+  <div ng-non-bindable>Ignored: {{1 + 2}}</div>
 </body>
 </html>

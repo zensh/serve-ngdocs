@@ -1,10 +1,12 @@
-describe("module:ng.directive:ngList", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-ngList-directive/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-ngList-directive/index-jquery.html");
   });
-
+  
   var listInput = element(by.model('names'));
-  var names = element(by.binding('{{names}}'));
+  var names = element(by.exactBinding('names'));
   var valid = element(by.binding('myForm.namesInput.$valid'));
   var error = element(by.css('span.error'));
 

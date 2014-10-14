@@ -1,4 +1,4 @@
-<a href='http://github.com/angular/angular.js/edit/master/docs/content/guide/expression.ngdoc' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+<a href='https://github.com/angular/angular.js/edit/master/docs/content/guide/expression.ngdoc?message=docs(guide%2FExpressions)%3A%20describe%20your%20change...' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
 
 
 <h1 id="angular-expressions">Angular Expressions</h1>
@@ -34,18 +34,19 @@ the method from your view. If you want to <code>eval()</code> an Angular express
 <p>
 
 <div>
-  <a ng-click="openPlunkr('examples/example-example91')" class="btn pull-right">
+  <a ng-click="openPlunkr('examples/example-example21')" class="btn pull-right">
     <i class="glyphicon glyphicon-edit">&nbsp;</i>
     Edit in Plunker</a>
-  <div class="runnable-example"
-      path="examples/example-example91">
 
-   
+  <div class="runnable-example"
+      path="examples/example-example21">
+
+  
     <div class="runnable-example-file" 
       name="index.html"
       language="html"
       type="html">
-      <pre><code>1+2={{1+2}}</code></pre>
+      <pre><code>&lt;span&gt;&#10;  1+2={{1+2}}&#10;&lt;/span&gt;</code></pre>
     </div>
   
     <div class="runnable-example-file" 
@@ -56,7 +57,7 @@ the method from your view. If you want to <code>eval()</code> an Angular express
     </div>
   
 
-    <iframe class="runnable-example-frame" src="examples/example-example91/index.html" name="example-example91"></iframe>
+    <iframe class="runnable-example-frame" src="examples/example-example21/index.html" name="example-example21"></iframe>
   </div>
 </div>
 
@@ -66,14 +67,15 @@ the method from your view. If you want to <code>eval()</code> an Angular express
 <p>
 
 <div>
-  <a ng-click="openPlunkr('examples/example-example92')" class="btn pull-right">
+  <a ng-click="openPlunkr('examples/example-example22')" class="btn pull-right">
     <i class="glyphicon glyphicon-edit">&nbsp;</i>
     Edit in Plunker</a>
+
   <div class="runnable-example"
-      path="examples/example-example92"
+      path="examples/example-example22"
       module="expressionExample">
 
-   
+  
     <div class="runnable-example-file" 
       name="index.html"
       language="html"
@@ -96,7 +98,7 @@ the method from your view. If you want to <code>eval()</code> an Angular express
     </div>
   
 
-    <iframe class="runnable-example-frame" src="examples/example-example92/index.html" name="example-example92"></iframe>
+    <iframe class="runnable-example-frame" src="examples/example-example22/index.html" name="example-example22"></iframe>
   </div>
 </div>
 
@@ -112,14 +114,15 @@ provide mockable access to globals.</p>
 <p>
 
 <div>
-  <a ng-click="openPlunkr('examples/example-example93')" class="btn pull-right">
+  <a ng-click="openPlunkr('examples/example-example23')" class="btn pull-right">
     <i class="glyphicon glyphicon-edit">&nbsp;</i>
     Edit in Plunker</a>
+
   <div class="runnable-example"
-      path="examples/example-example93"
+      path="examples/example-example23"
       module="expressionExample">
 
-   
+  
     <div class="runnable-example-file" 
       name="index.html"
       language="html"
@@ -142,7 +145,7 @@ provide mockable access to globals.</p>
     </div>
   
 
-    <iframe class="runnable-example-frame" src="examples/example-example93/index.html" name="example-example93"></iframe>
+    <iframe class="runnable-example-frame" src="examples/example-example23/index.html" name="example-example23"></iframe>
   </div>
 </div>
 
@@ -152,7 +155,8 @@ provide mockable access to globals.</p>
 <p>Expression evaluation is forgiving to undefined and null. In JavaScript, evaluating <code>a.b.c</code> throws
 an exception if <code>a</code> is not an object. While this makes sense for a general purpose language, the
 expression evaluations are primarily used for data binding, which often look like this:</p>
-<pre><code>    {{a.b.c}}</code></pre>
+<pre><code>{{a.b.c}}
+</code></pre>
 <p>It makes more sense to show nothing than to throw an exception if <code>a</code> is undefined (perhaps we are
 waiting for the server response, and it will become defined soon). If expression evaluation wasn&#39;t
 forgiving we&#39;d have to write bindings that clutter the code, for example: <code>{{((a||{}).b||{}).c}}</code></p>
@@ -164,18 +168,21 @@ be in controllers, not the views. If you need a real conditional, loop, or to th
 expression, delegate to a JavaScript method instead.</p>
 <h2 id="-event-"><code>$event</code></h2>
 <p>Directives like <a href="api/ng/directive/ngClick"><code>ngClick</code></a> and <a href="api/ng/directive/ngFocus"><code>ngFocus</code></a>
-expose a <code>$event</code> object within the scope of that expression.</p>
+expose a <code>$event</code> object within the scope of that expression. The object is an instance of a <a href="http://api.jquery.com/category/events/event-object/">jQuery
+Event Object</a> when jQuery is present or a
+similar jqLite object.</p>
 <p>
 
 <div>
-  <a ng-click="openPlunkr('examples/example-example94')" class="btn pull-right">
+  <a ng-click="openPlunkr('examples/example-example24')" class="btn pull-right">
     <i class="glyphicon glyphicon-edit">&nbsp;</i>
     Edit in Plunker</a>
+
   <div class="runnable-example"
-      path="examples/example-example94"
+      path="examples/example-example24"
       module="eventExampleApp">
 
-   
+  
     <div class="runnable-example-file" 
       name="index.html"
       language="html"
@@ -191,7 +198,7 @@ expose a <code>$event</code> object within the scope of that expression.</p>
     </div>
   
 
-    <iframe class="runnable-example-frame" src="examples/example-example94/index.html" name="example-example94"></iframe>
+    <iframe class="runnable-example-frame" src="examples/example-example24/index.html" name="example-example24"></iframe>
   </div>
 </div>
 
@@ -206,14 +213,15 @@ result is a non-undefined value (see value stabilization algorithm below).</p>
 <p>
 
 <div>
-  <a ng-click="openPlunkr('examples/example-example95')" class="btn pull-right">
+  <a ng-click="openPlunkr('examples/example-example25')" class="btn pull-right">
     <i class="glyphicon glyphicon-edit">&nbsp;</i>
     Edit in Plunker</a>
+
   <div class="runnable-example"
-      path="examples/example-example95"
+      path="examples/example-example25"
       module="oneTimeBidingExampleApp">
 
-   
+  
     <div class="runnable-example-file" 
       name="index.html"
       language="html"
@@ -236,7 +244,7 @@ result is a non-undefined value (see value stabilization algorithm below).</p>
     </div>
   
 
-    <iframe class="runnable-example-frame" src="examples/example-example95/index.html" name="example-example95"></iframe>
+    <iframe class="runnable-example-frame" src="examples/example-example25/index.html" name="example-example25"></iframe>
   </div>
 </div>
 
@@ -267,21 +275,25 @@ algorithm starting from step 1</li>
 <h3 id="how-to-benefit-from-one-time-binding">How to benefit from one-time binding</h3>
 <p>When interpolating text or attributes. If the expression, once set, will not change
 then it is a candidate for one-time expression.</p>
-<pre><code class="lang-html">  &lt;div name=&quot;attr: {{::color}}&quot;&gt;text: {{::name}}&lt;/div&gt;</code></pre>
+<pre><code class="lang-html">&lt;div name=&quot;attr: {{::color}}&quot;&gt;text: {{::name}}&lt;/div&gt;
+</code></pre>
 <p>When using a directive with bidirectional binding and the parameters will not change</p>
 <pre><code class="lang-js">someModule.directive(&#39;someDirective&#39;, function() {
-  return {
-    scope: {
-      name: &#39;=&#39;,
-      color: &#39;@&#39;
-    },
-    template: &#39;{{name}}: {{color}}&#39;
-  };
-});</code></pre>
-<pre><code class="lang-html">  &lt;div some-directive name=“::myName” color=“My color is {{::myColor}}”&gt;&lt;/div&gt;</code></pre>
+return {
+  scope: {
+    name: &#39;=&#39;,
+    color: &#39;@&#39;
+  },
+  template: &#39;{{name}}: {{color}}&#39;
+};
+});
+</code></pre>
+<pre><code class="lang-html">&lt;div some-directive name=“::myName” color=“My color is {{::myColor}}”&gt;&lt;/div&gt;
+</code></pre>
 <p>When using a directive that takes an expression</p>
 <pre><code class="lang-html">&lt;ul&gt;
-  &lt;li ng-repeat=&quot;item in ::items&quot;&gt;{{item.name}};&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+&lt;li ng-repeat=&quot;item in ::items&quot;&gt;{{item.name}};&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
 
 

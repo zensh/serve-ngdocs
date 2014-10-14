@@ -1,8 +1,10 @@
-describe("module:ng.directive:ngModelOptions", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-ngModelOptions-directive-blur/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-ngModelOptions-directive-blur/index-jquery.html");
   });
-
+  
   var model = element(by.binding('user.name'));
   var input = element(by.model('user.name'));
   var other = element(by.model('user.data'));

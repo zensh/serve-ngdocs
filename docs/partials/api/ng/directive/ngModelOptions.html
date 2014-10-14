@@ -1,8 +1,8 @@
-<a href='http://github.com/angular/angular.js/edit/master/src/ng/directive/input.js' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+<a href='https://github.com/angular/angular.js/edit/master/src/ng/directive/input.js?message=docs(ngModelOptions)%3A%20describe%20your%20change...#L2812' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
 
 
 
-<a href='http://github.com/angular/angular.js/tree/master/src/ng/directive/input.js#L2546' class='view-source pull-right btn btn-primary'>
+<a href='https://github.com/angular/angular.js/tree/master/src/ng/directive/input.js#L2812' class='view-source pull-right btn btn-primary'>
   <i class="glyphicon glyphicon-zoom-in">&nbsp;</i>View Source
 </a>
 
@@ -34,6 +34,7 @@ important because <code>form</code> controllers are published to the related sco
 <p>Any pending changes will take place immediately when an enclosing form is submitted via the
 <code>submit</code> event. Note that <code>ngClick</code> events will occur before the model is updated. Use <code>ngSubmit</code>
 to have access to the updated model.</p>
+<p><code>ngModelOptions</code> has an effect on the element it&#39;s declared on and its descendants.</p>
 
 </div>
 
@@ -92,9 +93,14 @@ matches the default events belonging of the control.</li>
 <li><code>debounce</code>: integer value which contains the debounce model update value in milliseconds. A
 value of 0 triggers an immediate update. If an object is supplied instead, you can specify a
 custom value for each event. For example:
-<code>ngModelOptions=&quot;{ updateOn: &#39;default blur&#39;, debounce: {&#39;default&#39;: 500, &#39;blur&#39;: 0} }&quot;</code></li>
+<code>ng-model-options=&quot;{ updateOn: &#39;default blur&#39;, debounce: {&#39;default&#39;: 500, &#39;blur&#39;: 0} }&quot;</code></li>
+<li><code>allowInvalid</code>: boolean value which indicates that the model can be set with values that did
+not validate correctly instead of the default behavior of setting the model to undefined.</li>
 <li><code>getterSetter</code>: boolean value which determines whether or not to treat functions bound to
    <code>ngModel</code> as getters/setters.</li>
+<li><code>timezone</code>: Defines the timezone to be used to read/write the <code>Date</code> instance in the model for
+<code>&lt;input type=&quot;date&quot;&gt;</code>, <code>&lt;input type=&quot;time&quot;&gt;</code>, ... . Right now, the only supported value is <code>&#39;UTC&#39;</code>,
+otherwise the default timezone of the browser will be used.</li>
 </ul>
 
         
@@ -118,12 +124,13 @@ custom value for each event. For example:
   <a ng-click="openPlunkr('examples/example-ngModelOptions-directive-blur')" class="btn pull-right">
     <i class="glyphicon glyphicon-edit">&nbsp;</i>
     Edit in Plunker</a>
+
   <div class="runnable-example"
       path="examples/example-ngModelOptions-directive-blur"
       name="ngModelOptions-directive-blur"
       module="optionsExample">
 
-   
+  
     <div class="runnable-example-file" 
       name="index.html"
       language="html"
@@ -160,12 +167,13 @@ custom value for each event. For example:
   <a ng-click="openPlunkr('examples/example-ngModelOptions-directive-debounce')" class="btn pull-right">
     <i class="glyphicon glyphicon-edit">&nbsp;</i>
     Edit in Plunker</a>
+
   <div class="runnable-example"
       path="examples/example-ngModelOptions-directive-debounce"
       name="ngModelOptions-directive-debounce"
       module="optionsExample">
 
-   
+  
     <div class="runnable-example-file" 
       name="index.html"
       language="html"
@@ -194,12 +202,13 @@ custom value for each event. For example:
   <a ng-click="openPlunkr('examples/example-ngModelOptions-directive-getter-setter')" class="btn pull-right">
     <i class="glyphicon glyphicon-edit">&nbsp;</i>
     Edit in Plunker</a>
+
   <div class="runnable-example"
       path="examples/example-ngModelOptions-directive-getter-setter"
       name="ngModelOptions-directive-getter-setter"
       module="getterSetterExample">
 
-   
+  
     <div class="runnable-example-file" 
       name="index.html"
       language="html"

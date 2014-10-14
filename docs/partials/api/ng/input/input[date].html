@@ -1,8 +1,8 @@
-<a href='http://github.com/angular/angular.js/edit/master/src/ng/directive/input.js' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this doc</a>
+<a href='https://github.com/angular/angular.js/edit/master/src/ng/directive/input.js?message=docs(input[date])%3A%20describe%20your%20change...#L109' class='improve-docs btn btn-primary'><i class="glyphicon glyphicon-edit">&nbsp;</i>Improve this Doc</a>
 
 
 
-<a href='http://github.com/angular/angular.js/tree/master/src/ng/directive/input.js#L101' class='view-source pull-right btn btn-primary'>
+<a href='https://github.com/angular/angular.js/tree/master/src/ng/directive/input.js#L109' class='view-source pull-right btn btn-primary'>
   <i class="glyphicon glyphicon-zoom-in">&nbsp;</i>View Source
 </a>
 
@@ -25,6 +25,8 @@ the HTML5 date input, a text element will be used. In that case, text must be en
 date format (yyyy-MM-dd), for example: <code>2009-01-06</code>. Since many
 modern browsers do not yet support this input type, it is important to provide cues to users on the
 expected input format via a placeholder or label. The model must always be a Date object.</p>
+<p>The timezone to be used to read/write the <code>Date</code> instance in the model can be defined using
+<a href="api/ng/directive/ngModelOptions">ngModelOptions</a>. By default, this is the timezone of the browser.</p>
 
 </div>
 
@@ -189,17 +191,18 @@ a valid ISO date string (yyyy-MM-dd).</p>
   <a ng-click="openPlunkr('examples/example-date-input-directive')" class="btn pull-right">
     <i class="glyphicon glyphicon-edit">&nbsp;</i>
     Edit in Plunker</a>
+
   <div class="runnable-example"
       path="examples/example-date-input-directive"
       name="date-input-directive"
       module="dateInputExample">
 
-   
+  
     <div class="runnable-example-file" 
       name="index.html"
       language="html"
       type="html">
-      <pre><code>&lt;script&gt;&#10;   angular.module(&#39;dateInputExample&#39;, [])&#10;     .controller(&#39;DateController&#39;, [&#39;$scope&#39;, function($scope) {&#10;       $scope.value = new Date(2013, 9, 22);&#10;     }]);&#10;&lt;/script&gt;&#10;&lt;form name=&quot;myForm&quot; ng-controller=&quot;DateController as dateCtrl&quot;&gt;&#10;   Pick a date between in 2013:&#10;   &lt;input type=&quot;date&quot; id=&quot;exampleInput&quot; name=&quot;input&quot; ng-model=&quot;value&quot;&#10;       placeholder=&quot;yyyy-MM-dd&quot; min=&quot;2013-01-01&quot; max=&quot;2013-12-31&quot; required /&gt;&#10;   &lt;span class=&quot;error&quot; ng-show=&quot;myForm.input.$error.required&quot;&gt;&#10;       Required!&lt;/span&gt;&#10;   &lt;span class=&quot;error&quot; ng-show=&quot;myForm.input.$error.date&quot;&gt;&#10;       Not a valid date!&lt;/span&gt;&#10;    &lt;tt&gt;value = {{value | date: &quot;yyyy-MM-dd&quot;}}&lt;/tt&gt;&lt;br/&gt;&#10;    &lt;tt&gt;myForm.input.$valid = {{myForm.input.$valid}}&lt;/tt&gt;&lt;br/&gt;&#10;    &lt;tt&gt;myForm.input.$error = {{myForm.input.$error}}&lt;/tt&gt;&lt;br/&gt;&#10;    &lt;tt&gt;myForm.$valid = {{myForm.$valid}}&lt;/tt&gt;&lt;br/&gt;&#10;    &lt;tt&gt;myForm.$error.required = {{!!myForm.$error.required}}&lt;/tt&gt;&lt;br/&gt;&#10;&lt;/form&gt;</code></pre>
+      <pre><code>&lt;script&gt;&#10;   angular.module(&#39;dateInputExample&#39;, [])&#10;     .controller(&#39;DateController&#39;, [&#39;$scope&#39;, function($scope) {&#10;       $scope.value = new Date(2013, 9, 22);&#10;     }]);&#10;&lt;/script&gt;&#10;&lt;form name=&quot;myForm&quot; ng-controller=&quot;DateController as dateCtrl&quot;&gt;&#10;   Pick a date in 2013:&#10;   &lt;input type=&quot;date&quot; id=&quot;exampleInput&quot; name=&quot;input&quot; ng-model=&quot;value&quot;&#10;       placeholder=&quot;yyyy-MM-dd&quot; min=&quot;2013-01-01&quot; max=&quot;2013-12-31&quot; required /&gt;&#10;   &lt;span class=&quot;error&quot; ng-show=&quot;myForm.input.$error.required&quot;&gt;&#10;       Required!&lt;/span&gt;&#10;   &lt;span class=&quot;error&quot; ng-show=&quot;myForm.input.$error.date&quot;&gt;&#10;       Not a valid date!&lt;/span&gt;&#10;    &lt;tt&gt;value = {{value | date: &quot;yyyy-MM-dd&quot;}}&lt;/tt&gt;&lt;br/&gt;&#10;    &lt;tt&gt;myForm.input.$valid = {{myForm.input.$valid}}&lt;/tt&gt;&lt;br/&gt;&#10;    &lt;tt&gt;myForm.input.$error = {{myForm.input.$error}}&lt;/tt&gt;&lt;br/&gt;&#10;    &lt;tt&gt;myForm.$valid = {{myForm.$valid}}&lt;/tt&gt;&lt;br/&gt;&#10;    &lt;tt&gt;myForm.$error.required = {{!!myForm.$error.required}}&lt;/tt&gt;&lt;br/&gt;&#10;&lt;/form&gt;</code></pre>
     </div>
   
     <div class="runnable-example-file" 

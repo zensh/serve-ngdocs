@@ -1,12 +1,6 @@
-describe('SCE doc demo', function() {
-  it('should sanitize untrusted values', function() {
-    expect(element.all(by.css('.htmlComment')).first().getInnerHtml())
-        .toBe('<span>Is <i>anyone</i> reading this?</span>');
+  it('should check ng-class-odd and ng-class-even', function() {
+    expect(element(by.repeater('name in names').row(0).column('name')).getAttribute('class')).
+      toMatch(/odd/);
+    expect(element(by.repeater('name in names').row(1).column('name')).getAttribute('class')).
+      toMatch(/even/);
   });
-
-  it('should NOT sanitize explicitly trusted values', function() {
-    expect(element(by.id('explicitlyTrustedHtml')).getInnerHtml()).toBe(
-        '<span onmouseover="this.textContent=&quot;Explicitly trusted HTML bypasses ' +
-        'sanitization.&quot;">Hover over this text.</span>');
-  });
-});

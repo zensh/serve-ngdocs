@@ -6,12 +6,14 @@
   
 
   <script src="../../../angular.min.js"></script>
+  <script src="script.js"></script>
   
 
   
 </head>
-<body ng-app="">
-    Check me to check both: <input type="checkbox" ng-model="master"><br/>
-  <input id="checkSlave" type="checkbox" ng-checked="master">
+<body ng-app="docsSimpleDirective">
+    <div ng-controller="Controller">
+    <div my-customer></div>
+  </div>
 </body>
 </html>

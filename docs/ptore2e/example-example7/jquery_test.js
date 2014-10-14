@@ -1,11 +1,12 @@
-describe("module:ng.directive:ngDisabled", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example7/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example7/index-jquery.html");
   });
-
-  it('should toggle button', function() {
-    expect(element(by.css('button')).getAttribute('disabled')).toBeFalsy();
-    element(by.model('checked')).click();
-    expect(element(by.css('button')).getAttribute('disabled')).toBeTruthy();
+  
+  it('should show off bindings', function() {
+    expect(element(by.css('div[ng-controller="Controller"] span[ng-bind]')).getText())
+        .toBe('Max Karl Ernst Ludwig Planck (April 23, 1858 – October 4, 1947)');
   });
 });

@@ -1,8 +1,10 @@
-describe("module:ng.input:input[week]", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-week-input-directive/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-week-input-directive/index-jquery.html");
   });
-
+  
   var value = element(by.binding('value | date: "yyyy-Www"'));
   var valid = element(by.binding('myForm.input.$valid'));
   var input = element(by.model('value'));

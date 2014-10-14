@@ -1,5 +1,5 @@
   var listInput = element(by.model('names'));
-  var names = element(by.binding('{{names}}'));
+  var names = element(by.exactBinding('names'));
   var valid = element(by.binding('myForm.namesInput.$valid'));
   var error = element(by.css('span.error'));
 

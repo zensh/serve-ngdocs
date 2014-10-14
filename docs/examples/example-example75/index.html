@@ -6,16 +6,17 @@
   
 
   <script src="../../../angular.min.js"></script>
-  <script src="app.js"></script>
   
 
   
 </head>
-<body ng-app="spicyApp1">
-    <div ng-controller="SpicyController">
-   <button ng-click="chiliSpicy()">Chili</button>
-   <button ng-click="jalapenoSpicy()">Jalapeño</button>
-   <p>The food is {{spice}} spicy!</p>
-  </div>
+<body ng-app="">
+    <p>Typing in the input box below updates the key count</p>
+  <input ng-keyup="count = count + 1" ng-init="count=0"> key up count: {{count}}
+
+  <p>Typing in the input box below updates the keycode</p>
+  <input ng-keyup="event=$event">
+  <p>event keyCode: {{ event.keyCode }}</p>
+  <p>event altKey: {{ event.altKey }}</p>
 </body>
 </html>

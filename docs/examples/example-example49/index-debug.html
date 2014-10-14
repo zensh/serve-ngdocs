@@ -10,52 +10,43 @@
 
   
 </head>
-<body ng-app="selectExample">
-    <script>
-  angular.module('selectExample', [])
-    .controller('ExampleController', ['$scope', function($scope) {
-      $scope.colors = [
-        {name:'black', shade:'dark'},
-        {name:'white', shade:'light'},
-        {name:'red', shade:'dark'},
-        {name:'blue', shade:'dark'},
-        {name:'yellow', shade:'light'}
-      ];
-      $scope.myColor = $scope.colors[2]; // red
-    }]);
-  </script>
-  <div ng-controller="ExampleController">
-    <ul>
-      <li ng-repeat="color in colors">
-        Name: <input ng-model="color.name">
-        [<a href ng-click="colors.splice($index, 1)">X</a>]
-      </li>
-      <li>
-        [<a href ng-click="colors.push({})">add</a>]
-      </li>
-    </ul>
-    <hr/>
-    Color (null not allowed):
-    <select ng-model="myColor" ng-options="color.name for color in colors"></select><br>
+<body ng-app="compileExample">
+   <script>
+   angular.module('compileExample', [], function($compileProvider) {
+     // configure new 'compile' directive by passing a directive
+     // factory function. The factory function injects the '$compile'
+     $compileProvider.directive('compile', function($compile) {
+       // directive factory creates a link function
+       return function(scope, element, attrs) {
+         scope.$watch(
+           function(scope) {
+              // watch the 'compile' expression for changes
+             return scope.$eval(attrs.compile);
+           },
+           function(value) {
+             // when the 'compile' expression changes
+             // assign it into the current DOM
+             element.html(value);
 
-    Color (null allowed):
-    <span  class="nullable">
-      <select ng-model="myColor" ng-options="color.name for color in colors">
-        <option value="">-- choose color --</option>
-      </select>
-    </span><br/>
-
-    Color grouped by shade:
-    <select ng-model="myColor" ng-options="color.name group by color.shade for color in colors">
-    </select><br/>
-
-
-    Select <a href ng-click="myColor = { name:'not in list', shade: 'other' }">bogus</a>.<br>
-    <hr/>
-    Currently selected: {{ {selected_color:myColor}  }}
-    <div style="border:solid 1px black; height:20px"
-         ng-style="{'background-color':myColor.name}">
-    </div>
-  </div>
+             // compile the new DOM and link it to the current
+             // scope.
+             // NOTE: we only compile .childNodes so that
+             // we don't get into infinite loop compiling ourselves
+             $compile(element.contents())(scope);
+           }
+         );
+       };
+     });
+   })
+   .controller('GreeterController', ['$scope', function($scope) {
+     $scope.name = 'Angular';
+     $scope.html = 'Hello {{name}}';
+   }]);
+ </script>
+ <div ng-controller="GreeterController">
+   <input ng-model="name"> <br>
+   <textarea ng-model="html"></textarea> <br>
+   <div compile="html"></div>
+ </div>
 </body>
 </html>

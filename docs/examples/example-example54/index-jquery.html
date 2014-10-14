@@ -5,18 +5,17 @@
   <title>Example - example-example54-jquery</title>
   
 
-  <script src="../../components/jquery-1.10.2/jquery.js"></script>
+  <script src="../../components/jquery-2.1.1/jquery.js"></script>
   <script src="../../../angular.js"></script>
   
 
   
 </head>
 <body ng-app="">
-    <span ng-non-bindable>{{1288323623006 | date:'medium'}}</span>:
-      <span>{{1288323623006 | date:'medium'}}</span><br>
-  <span ng-non-bindable>{{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>:
-     <span>{{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</span><br>
-  <span ng-non-bindable>{{1288323623006 | date:'MM/dd/yyyy @ h:mma'}}</span>:
-     <span>{{'1288323623006' | date:'MM/dd/yyyy @ h:mma'}}</span><br>
+    Check me to select: <input type="checkbox" ng-model="selected"><br/>
+  <select>
+    <option>Hello!</option>
+    <option id="greet" ng-selected="selected">Greetings!</option>
+  </select>
 </body>
 </html>

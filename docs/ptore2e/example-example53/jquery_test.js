@@ -1,19 +1,13 @@
-describe("module:ng.filter:number", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example53/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example53/index-jquery.html");
   });
-
-  it('should format numbers', function() {
-    expect(element(by.id('number-default')).getText()).toBe('1,234.568');
-    expect(element(by.binding('val | number:0')).getText()).toBe('1,235');
-    expect(element(by.binding('-val | number:4')).getText()).toBe('-1,234.5679');
+  
+  it('should toggle readonly attr', function() {
+    expect(element(by.css('[type="text"]')).getAttribute('readonly')).toBeFalsy();
+    element(by.model('checked')).click();
+    expect(element(by.css('[type="text"]')).getAttribute('readonly')).toBeTruthy();
   });
-
-  it('should update', function() {
-    element(by.model('val')).clear();
-    element(by.model('val')).sendKeys('3374.333');
-    expect(element(by.id('number-default')).getText()).toBe('3,374.333');
-    expect(element(by.binding('val | number:0')).getText()).toBe('3,374');
-    expect(element(by.binding('-val | number:4')).getText()).toBe('-3,374.3330');
- });
 });

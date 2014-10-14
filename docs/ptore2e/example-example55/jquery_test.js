@@ -1,9 +1,13 @@
-describe("module:ng.filter:json", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example55/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example55/index-jquery.html");
   });
-
-  it('should jsonify filtered objects', function() {
-    expect(element(by.binding("{'name':'value'}")).getText()).toMatch(/\{\n  "name": ?"value"\n}/);
+  
+  it('should toggle open', function() {
+    expect(element(by.id('details')).getAttribute('open')).toBeFalsy();
+    element(by.model('open')).click();
+    expect(element(by.id('details')).getAttribute('open')).toBeTruthy();
   });
 });

@@ -6,20 +6,26 @@
   
 
   <script src="../../../angular.js"></script>
-  <script src="script.js"></script>
   
 
   
 </head>
-<body ng-app="form-example2">
-    <div contentEditable="true" ng-model="content" title="Click to edit">Some</div>
-  <pre>model = {{content}}</pre>
+<body ng-app="customInterpolationApp">
+  <script>
+  var customInterpolationApp = angular.module('customInterpolationApp', []);
 
-  <style type="text/css">
-    div[contentEditable] {
-      cursor: pointer;
-      background-color: #D0D0D0;
-    }
-  </style>
+  customInterpolationApp.config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('//');
+    $interpolateProvider.endSymbol('//');
+  });
+
+
+  customInterpolationApp.controller('DemoController', function() {
+      this.label = "This binding is brought you by // interpolation symbols.";
+  });
+</script>
+<div ng-app="App" ng-controller="DemoController as demo">
+    //demo.label//
+</div>
 </body>
 </html>

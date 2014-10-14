@@ -1,19 +1,17 @@
-describe("expression", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example93/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example93/index-jquery.html");
   });
-
-  it('should calculate expression in binding', function() {
-    if (browser.params.browser == 'safari') {
-      // Safari can't handle dialogs.
-      return;
-    }
-    element(by.css('[ng-click="greet()"]')).click();
-
-    var alertDialog = browser.switchTo().alert();
-
-    expect(alertDialog.getText()).toEqual('Hello World');
-
-    alertDialog.accept();
-  });
+  
+   it('should check ng-options', function() {
+     expect(element(by.binding('{selected_color:myColor}')).getText()).toMatch('red');
+     element.all(by.model('myColor')).first().click();
+     element.all(by.css('select[ng-model="myColor"] option')).first().click();
+     expect(element(by.binding('{selected_color:myColor}')).getText()).toMatch('black');
+     element(by.css('.nullable select[ng-model="myColor"]')).click();
+     element.all(by.css('.nullable select[ng-model="myColor"] option')).first().click();
+     expect(element(by.binding('{selected_color:myColor}')).getText()).toMatch('null');
+   });
 });

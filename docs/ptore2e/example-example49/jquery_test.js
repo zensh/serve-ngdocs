@@ -1,15 +1,17 @@
-describe("module:ng.directive:select", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-example49/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-example49/index-jquery.html");
   });
-
-   it('should check ng-options', function() {
-     expect(element(by.binding('{selected_color:myColor}')).getText()).toMatch('red');
-     element.all(by.model('myColor')).first().click();
-     element.all(by.css('select[ng-model="myColor"] option')).first().click();
-     expect(element(by.binding('{selected_color:myColor}')).getText()).toMatch('black');
-     element(by.css('.nullable select[ng-model="myColor"]')).click();
-     element.all(by.css('.nullable select[ng-model="myColor"] option')).first().click();
-     expect(element(by.binding('{selected_color:myColor}')).getText()).toMatch('null');
-   });
+  
+  it('should auto compile', function() {
+    var textarea = $('textarea');
+    var output = $('div[compile]');
+    // The initial state reads 'Hello Angular'.
+    expect(output.getText()).toBe('Hello Angular');
+    textarea.clear();
+    textarea.sendKeys('{{name}}!');
+    expect(output.getText()).toBe('Angular!');
+  });
 });

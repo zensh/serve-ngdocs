@@ -1,9 +1,11 @@
-describe("module:ng.input:input[time]", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-time-input-directive/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-time-input-directive/index-jquery.html");
   });
-
-   var value = element(by.binding('value | date: "HH:mm"'));
+  
+   var value = element(by.binding('value | date: "HH:mm:ss"'));
    var valid = element(by.binding('myForm.input.$valid'));
    var input = element(by.model('value'));
 
@@ -19,7 +21,7 @@ describe("module:ng.input:input[time]", function() {
    }
 
    it('should initialize to model', function() {
-     expect(value.getText()).toContain('14:57');
+     expect(value.getText()).toContain('14:57:00');
      expect(valid.getText()).toContain('myForm.input.$valid = true');
    });
 
@@ -30,7 +32,7 @@ describe("module:ng.input:input[time]", function() {
    });
 
    it('should be invalid if over max', function() {
-     setInput('23:59');
+     setInput('23:59:00');
      expect(value.getText()).toContain('');
      expect(valid.getText()).toContain('myForm.input.$valid = false');
    });

@@ -1,4 +1,4 @@
-   var value = element(by.binding('value | date: "HH:mm"'));
+   var value = element(by.binding('value | date: "HH:mm:ss"'));
    var valid = element(by.binding('myForm.input.$valid'));
    var input = element(by.model('value'));
 
@@ -14,7 +14,7 @@
    }
 
    it('should initialize to model', function() {
-     expect(value.getText()).toContain('14:57');
+     expect(value.getText()).toContain('14:57:00');
      expect(valid.getText()).toContain('myForm.input.$valid = true');
    });
 
@@ -25,7 +25,7 @@
    });
 
    it('should be invalid if over max', function() {
-     setInput('23:59');
+     setInput('23:59:00');
      expect(value.getText()).toContain('');
      expect(valid.getText()).toContain('myForm.input.$valid = false');
    });

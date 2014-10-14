@@ -1,8 +1,10 @@
-describe("module:ng.input:input[date]", function() {
+describe("", function() {
+  var rootEl;
   beforeEach(function() {
-    browser.get("./examples/example-date-input-directive/index-jquery.html");
+    rootEl = browser.rootEl;
+    browser.get("examples/example-date-input-directive/index-jquery.html");
   });
-
+  
    var value = element(by.binding('value | date: "yyyy-MM-dd"'));
    var valid = element(by.binding('myForm.input.$valid'));
    var input = element(by.model('value'));
