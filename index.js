@@ -1,13 +1,15 @@
 'use strict';
 
-var finalhandler = require('finalhandler');
-var http = require('http');
-var serveStatic = require('serve-static');
+var Toa = require('toa');
+var toaStatic = require('toa-static')({
+  root: 'docs',
+  index: 'index-jsgen.html',
+  maxAge: 1000 * 60 * 60 * 24 * 365,
+  setStatic: function () {
+    if (this.path.indexOf('/api') === 0) return '/';
+  }
+});
 
-var serve = serveStatic('docs', {'index': 'index-jsgen.html'});
-
-// Create server
-http.createServer(function (req, res) {
-  serve(req, res, finalhandler(req, res));
+Toa(function (Thunk) {
+  return toaStatic;
 }).listen(4000);
-console.log('Listen: 4000');

@@ -1,12 +1,12 @@
 {
   "name": "serve-ngdocs",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "finalhandler": "^0.1.0",
-    "serve-static": "^1.4.3"
+    "toa": "^0.2.0",
+    "toa-static": "^0.1.1"
   }
 }
