@@ -5,7 +5,7 @@ var toaStatic = require('toa-static')({
   root: 'docs',
   index: 'index-jsgen.html',
   maxAge: 1000 * 60 * 60 * 24 * 365,
-  setStatic: function () {
+  staticPath: function () {
     if (this.path.indexOf('/api') === 0) return '/';
   }
 });
