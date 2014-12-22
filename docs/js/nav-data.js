@@ -166,13 +166,13 @@ angular.module('navData', [])
             "type": "input"
           },
           {
-            "name": "input[dateTimeLocal]",
-            "href": "api/ng/input/input[dateTimeLocal]",
+            "name": "input[date]",
+            "href": "api/ng/input/input[date]",
             "type": "input"
           },
           {
-            "name": "input[date]",
-            "href": "api/ng/input/input[date]",
+            "name": "input[datetime-local]",
+            "href": "api/ng/input/input[datetime-local]",
             "type": "input"
           },
           {
@@ -968,6 +968,11 @@ angular.module('navData', [])
             "href": "api/ngMock/type"
           },
           {
+            "name": "$rootScope.Scope",
+            "href": "api/ngMock/type/$rootScope.Scope",
+            "type": "type"
+          },
+          {
             "name": "angular.mock.TzDate",
             "href": "api/ngMock/type/angular.mock.TzDate",
             "type": "type"
@@ -1226,6 +1231,16 @@ angular.module('navData', [])
             "type": "error"
           },
           {
+            "name": "$http",
+            "href": "error/$http",
+            "type": "section"
+          },
+          {
+            "name": "badreq",
+            "href": "error/$http/badreq",
+            "type": "error"
+          },
+          {
             "name": "$injector",
             "href": "error/$injector",
             "type": "section"
@@ -1289,11 +1304,6 @@ angular.module('navData', [])
             "name": "$location",
             "href": "error/$location",
             "type": "section"
-          },
-          {
-            "name": "ihshprfx",
-            "href": "error/$location/ihshprfx",
-            "type": "error"
           },
           {
             "name": "ipthprfx",
@@ -1521,6 +1531,11 @@ angular.module('navData', [])
             "type": "error"
           },
           {
+            "name": "test",
+            "href": "error/ng/test",
+            "type": "error"
+          },
+          {
             "name": "ngModel",
             "href": "error/ngModel",
             "type": "section"
@@ -1721,6 +1736,11 @@ angular.module('navData', [])
           {
             "name": "i18n and l10n",
             "href": "guide/i18n",
+            "type": "page"
+          },
+          {
+            "name": "Security",
+            "href": "guide/security",
             "type": "page"
           },
           {

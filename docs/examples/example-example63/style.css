@@ -1,6 +1,9 @@
-  .odd {
+.strike {
+  text-decoration: line-through;
+}
+.bold {
+    font-weight: bold;
+}
+.red {
     color: red;
-  }
-  .even {
-    color: blue;
-  }
+}

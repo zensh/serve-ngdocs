@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en" ng-app="docsApp" ng-strict-di ng-controller="DocsController">
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="Description"
-        content="AngularJS is what HTML would have been, had it been designed for building web-apps.
-                 Declarative templates with data-binding, MVC, dependency injection and great
-                 testability story all implemented with pure client-side JavaScript!">
+  <meta name="Description" content="AngularJS is what HTML would have been, had it been designed for building web-apps.
+  Declarative templates with data-binding, MVC, dependency injection and great
+  testability story all implemented with pure client-side JavaScript!">
   <meta name="fragment" content="!">
   <title ng-bind-template="AngularJS: {{ currentArea.name }}: {{ currentPage.name || 'Error: Page not found'}}">AngularJS</title>
 
@@ -17,44 +17,100 @@
     // before the base attribute is added, causing 404 and terribly slow loading of the docs app.
     (function() {
       var indexFile = (location.pathname.match(/\/(index[^\.]*\.html)/) || ['', ''])[1],
-          rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
-          baseUrl = location.href.replace(rUrl, indexFile),
-          production = location.hostname === 'docs.angularjs.cn',
-          headEl = document.getElementsByTagName('head')[0],
-          sync = true;
+        rUrl = /(#!\/|api|guide|misc|tutorial|error|index[^\.]*\.html).*$/,
+        baseUrl = location.href.replace(rUrl, indexFile),
+        production = location.hostname === 'docs.angularjs.cn',
+        headEl = document.getElementsByTagName('head')[0],
+        sync = true;
 
-      addTag('base', {href: baseUrl});
-
-
-      addTag('link', {rel: 'stylesheet', href: 'components/bootstrap-3.1.1/css/bootstrap.min.css', type: 'text/css'});
-      addTag('link', {rel: 'stylesheet', href: 'components/open-sans-fontface-1.0.4/open-sans.css', type: 'text/css'});
-      addTag('link', {rel: 'stylesheet', href: 'css/prettify-theme.css', type: 'text/css'});
-      addTag('link', {rel: 'stylesheet', href: 'css/docs.css', type: 'text/css'});
-      addTag('link', {rel: 'stylesheet', href: 'css/animations.css', type: 'text/css'});
+      addTag('base', {
+        href: baseUrl
+      });
 
 
-      addTag('script', {src: '//cdn.angularjs.cn/angularjs/1.3.1/angular.min.js' }, sync);
-      addTag('script', {src: '//cdn.angularjs.cn/angularjs/1.3.1/angular-resource.min.js' }, sync);
-      addTag('script', {src: '//cdn.angularjs.cn/angularjs/1.3.1/angular-route.min.js' }, sync);
-      addTag('script', {src: '//cdn.angularjs.cn/angularjs/1.3.1/angular-cookies.min.js' }, sync);
-      addTag('script', {src: '//cdn.angularjs.cn/angularjs/1.3.1/angular-sanitize.min.js' }, sync);
-      addTag('script', {src: '//cdn.angularjs.cn/angularjs/1.3.1/angular-touch.min.js' }, sync);
-      addTag('script', {src: '//cdn.angularjs.cn/angularjs/1.3.1/angular-animate.min.js' }, sync);
-      addTag('script', {src: 'components/marked-0.3.2/lib/marked.js' }, sync);
-      addTag('script', {src: 'js/angular-bootstrap/bootstrap.min.js' }, sync);
-      addTag('script', {src: 'js/angular-bootstrap/dropdown-toggle.min.js' }, sync);
-      addTag('script', {src: 'components/lunr.js-0.4.2/lunr.min.js' }, sync);
-      addTag('script', {src: 'components/google-code-prettify-1.0.1/src/prettify.js' }, sync);
-      addTag('script', {src: 'components/google-code-prettify-1.0.1/src/lang-css.js' }, sync);
-      addTag('script', {src: 'js/versions-data.js' }, sync);
-      addTag('script', {src: 'js/pages-data.js' }, sync);
-      addTag('script', {src: 'js/nav-data.js' }, sync);
-      addTag('script', {src: 'js/docs.min.js' }, sync);
+      addTag('link', {
+        rel: 'stylesheet',
+        href: 'components/bootstrap-3.1.1/css/bootstrap.min.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: 'components/open-sans-fontface-1.0.4/open-sans.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: 'css/prettify-theme.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: 'css/docs.css',
+        type: 'text/css'
+      });
+      addTag('link', {
+        rel: 'stylesheet',
+        href: 'css/animations.css',
+        type: 'text/css'
+      });
+
+
+      addTag('script', {
+        src: '//cdn.angularjs.cn/angularjs/1.3.9/angular.min.js'
+      }, sync);
+      addTag('script', {
+        src: '//cdn.angularjs.cn/angularjs/1.3.9/angular-resource.min.js'
+      }, sync);
+      addTag('script', {
+        src: '//cdn.angularjs.cn/angularjs/1.3.9/angular-route.min.js'
+      }, sync);
+      addTag('script', {
+        src: '//cdn.angularjs.cn/angularjs/1.3.9/angular-cookies.min.js'
+      }, sync);
+      addTag('script', {
+        src: '//cdn.angularjs.cn/angularjs/1.3.9/angular-sanitize.min.js'
+      }, sync);
+      addTag('script', {
+        src: '//cdn.angularjs.cn/angularjs/1.3.9/angular-touch.min.js'
+      }, sync);
+      addTag('script', {
+        src: '//cdn.angularjs.cn/angularjs/1.3.9/angular-animate.min.js'
+      }, sync);
+      addTag('script', {
+        src: 'components/marked-0.3.2/lib/marked.js'
+      }, sync);
+      addTag('script', {
+        src: 'js/angular-bootstrap/bootstrap.min.js'
+      }, sync);
+      addTag('script', {
+        src: 'js/angular-bootstrap/dropdown-toggle.min.js'
+      }, sync);
+      addTag('script', {
+        src: 'components/lunr.js-0.4.2/lunr.min.js'
+      }, sync);
+      addTag('script', {
+        src: 'components/google-code-prettify-1.0.1/src/prettify.js'
+      }, sync);
+      addTag('script', {
+        src: 'components/google-code-prettify-1.0.1/src/lang-css.js'
+      }, sync);
+      addTag('script', {
+        src: 'js/versions-data.js'
+      }, sync);
+      addTag('script', {
+        src: 'js/pages-data.js'
+      }, sync);
+      addTag('script', {
+        src: 'js/nav-data.js'
+      }, sync);
+      addTag('script', {
+        src: 'js/docs.min.js'
+      }, sync);
 
 
       function addTag(name, attributes, sync) {
         var el = document.createElement(name),
-            attrName;
+          attrName;
 
         for (attrName in attributes) {
           el.setAttribute(attrName, attributes[attrName]);
@@ -63,20 +119,22 @@
         sync ? document.write(outerHTML(el)) : headEl.appendChild(el);
       }
 
-      function outerHTML(node){
+      function outerHTML(node) {
         // if IE, Chrome take the internal method otherwise build one
         return node.outerHTML || (
-            function(n){
-                var div = document.createElement('div'), h;
-                div.appendChild(n);
-                h = div.innerHTML;
-                div = null;
-                return h;
-            })(node);
+          function(n) {
+            var div = document.createElement('div'),
+              h;
+            div.appendChild(n);
+            h = div.innerHTML;
+            div = null;
+            return h;
+          })(node);
       }
     })();
   </script>
 </head>
+
 <body>
   <div id="wrapper">
     <header scroll-y-offset-element class="header header-fixed">
@@ -89,19 +147,26 @@
               </a>
               <ul class="nav navbar-nav">
                 <li class="divider-vertical"></li>
-                <li><a href="http://angularjs.cn"><i class="icon-home icon-white"></i> 中文社区</a></li>
+                <li><a href="http://angularjs.cn"><i class="icon-home icon-white"></i> 中文社区</a>
+                </li>
                 <li class="divider-vertical"></li>
                 <li class="dropdown active">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="icon-book icon-white"></i> 英文文档 <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a href="tutorial">Tutorial</a></li>
-                    <li><a href="guide">Developer Guide</a></li>
-                    <li><a href="api">API Reference</a></li>
-                    <li><a href="error">Error Reference</a></li>
-                    <li><a href="misc/contribute">Contribute</a></li>
-                    <li><a href="http://cdn.angularjs.cn/angularjs/angularjs-latest.zip">Download</a></li>
+                    <li><a href="tutorial">Tutorial</a>
+                    </li>
+                    <li><a href="guide">Developer Guide</a>
+                    </li>
+                    <li><a href="api">API Reference</a>
+                    </li>
+                    <li><a href="error">Error Reference</a>
+                    </li>
+                    <li><a href="misc/contribute">Contribute</a>
+                    </li>
+                    <li><a href="http://cdn.angularjs.cn/angularjs/angularjs-latest.zip">Download</a>
+                    </li>
                   </ul>
                 </li>
                 <li class="divider-vertical"></li>
@@ -109,16 +174,7 @@
             </div>
             <form ng-class="{focus:focus}" class="navbar-search col-md-3 docs-search" ng-submit="submit()">
               <span class="glyphicon glyphicon-search search-icon"></span>
-              <input type="text"
-                     name="as_q"
-                     class="search-query"
-                     placeholder="Click or press / to search"
-                     ng-focus="focus=true"
-                     ng-blur="focus=false"
-                     ng-change="search(q)"
-                     ng-model="q"
-                     docs-search-input
-                     autocomplete="off" />
+              <input type="text" name="as_q" class="search-query" placeholder="Click or press / to search" ng-focus="focus=true" ng-blur="focus=false" ng-change="search(q)" ng-model="q" docs-search-input autocomplete="off" />
             </form>
           </div>
         </div>
@@ -144,10 +200,7 @@
         <div class="container main-grid main-header-grid">
           <div class="grid-left">
             <div ng-controller="DocsVersionsCtrl" class="picker version-picker">
-              <select ng-options="v as ('v' + v.version + (v.isSnapshot ? ' (snapshot)' : '')) group by getGroupName(v) for v in docs_versions"
-                      ng-model="docs_version"
-                      ng-change="jumpToDocsVersion(docs_version)"
-                      class="docs-version-jump">
+              <select ng-options="v as ('v' + v.version + (v.isSnapshot ? ' (snapshot)' : '')) group by getGroupName(v) for v in docs_versions" ng-model="docs_version" ng-change="jumpToDocsVersion(docs_version)" class="docs-version-jump">
               </select>
             </div>
           </div>
@@ -174,8 +227,8 @@
                 <ul class="aside-nav">
                   <li ng-repeat="navItem in navGroup.navItems" ng-class="navClass(navItem)" class="nav-index-listing">
                     <a ng-if="navItem.extra.href" ng-class="navClass(navItem.extra)" href="{{navItem.extra.href}}">
-                      {{navItem.extra.text}}<i ng-if="navItem.extra.icon" class="icon-{{navItem.extra.icon}}"></i>
-                    </a>
+                    {{navItem.extra.text}}<i ng-if="navItem.extra.icon" class="icon-{{navItem.extra.icon}}"></i>
+                  </a>
                     <a tabindex="2" ng-class="linkClass(navItem)" href="{{navItem.href}}">{{navItem.name}}</a>
                   </li>
                 </ul>
@@ -195,25 +248,27 @@
 
     <footer class="footer">
       <div class="container">
-        <p class="pull-right"><a back-to-top>Back to top</a></p>
+        <p class="pull-right"><a back-to-top>Back to top</a>
+        </p>
 
         <p>
-          Super-powered by Google  ©2010-2014
-          ( <a id="version"
-               ng-href="https://github.com/angular/angular.js/blob/master/CHANGELOG.md#{{versionNumber}}"
-               ng-bind-template="v{{version}}">
-            </a>
+          Super-powered by Google ©2010-2014 (
+          <a id="version" ng-href="https://github.com/angular/angular.js/blob/master/CHANGELOG.md#{{versionNumber}}" ng-bind-template="v{{version}}">
+          </a>
           )
         </p>
         <p>
           Code licensed under the
           <a href="https://github.com/angular/angular.js/blob/master/LICENSE" target="_blank">The
-            MIT License</a>. Documentation licensed under <a
-              href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+        MIT License</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
         </p>
       </div>
     </footer>
   </div>
-  <script>var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000062427'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000062427%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  <script>
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1000062427'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1000062427%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+  </script>
 </body>
+
 </html>

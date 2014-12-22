@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "toa": "^0.4.2",
+    "toa": "^0.5.2",
     "toa-static": "^0.3.0"
   }
 }

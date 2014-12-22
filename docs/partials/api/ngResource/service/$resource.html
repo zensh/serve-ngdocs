@@ -31,7 +31,7 @@ the need to interact with the low level <a href="api/ng/service/$http">$http</a>
 which can pose problems with server backends that do not expect that
 behavior.  This can be disabled by configuring the <code>$resourceProvider</code> like
 this:</p>
-<pre><code class="lang-js">app.config([&#39;$resourceProvider&#39;, function ($resourceProvider) {
+<pre><code class="lang-js">app.config([&#39;$resourceProvider&#39;, function($resourceProvider) {
   // Don&#39;t strip trailing slashes from calculated URLs
   $resourceProvider.defaults.stripTrailingSlashes = false;
 }]);
@@ -133,7 +133,7 @@ this:</p>
         <a href="" class="label type-hint type-hint-object">Object.&lt;Object&gt;=</a>
       </td>
       <td>
-        <p>Hash with declaration of custom action that should extend
+        <p>Hash with declaration of custom actions that should extend
   the default set of resource actions. The declaration should be created in the format of <a href="api/ng/service/$http#usage">$http.config</a>:</p>
 <pre><code>{action1: {method:?, params:?, isArray:?, headers:?, ...},
  action2: {method:?, params:?, isArray:?, headers:?, ...},

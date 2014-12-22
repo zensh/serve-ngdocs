@@ -74,6 +74,7 @@ angular.module('DocsController', [])
   $scope.navClass = function(navItem) {
     return {
       active: navItem.href && this.currentPage && this.currentPage.path,
+      current: this.currentPage && this.currentPage.path === navItem.href,
       'nav-index-section': navItem.type === 'section'
     };
   };
@@ -309,10 +310,14 @@ angular.module('search', [])
 
   $scope.submit = function() {
     var result;
-    for(var i in $scope.results) {
-      result = $scope.results[i][0];
-      if(result) {
-        break;
+    if ($scope.results.api) {
+      result = $scope.results.api[0];
+    } else {
+      for(var i in $scope.results) {
+        result = $scope.results[i][0];
+        if(result) {
+          break;
+        }
       }
     }
     if(result) {
@@ -530,10 +535,13 @@ angular.module('tutorials', [])
       '</p>'
   };
 });
+"use strict";
+
 angular.module('versions', [])
 
 .controller('DocsVersionsCtrl', ['$scope', '$location', '$window', 'NG_VERSIONS', function($scope, $location, $window, NG_VERSIONS) {
   $scope.docs_version  = NG_VERSIONS[0];
+  $scope.docs_versions = NG_VERSIONS;
 
   for(var i=0, minor = NaN; i < NG_VERSIONS.length; i++) {
     var version = NG_VERSIONS[i];
@@ -545,9 +553,8 @@ angular.module('versions', [])
     minor = version.minor;
   }
 
-  $scope.docs_versions = NG_VERSIONS;
   $scope.getGroupName = function(v) {
-    return v.isLatest ? 'Latest' : (v.isStable ? 'Stable' : 'Unstable');
+    return v.isLatest ? 'Latest' : ('v' + v.major + '.' + v.minor + '.x');
   };
 
   $scope.jumpToDocsVersion = function(version) {

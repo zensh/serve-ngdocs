@@ -12,4 +12,4 @@ var toaStatic = require('toa-static')({
 
 Toa(function (Thunk) {
   return Thunk.call(this, toaStatic);
-}).listen(4000);
+}).listen(3001);

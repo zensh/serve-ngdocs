@@ -11,13 +11,14 @@
   "undef": true,
   "unused": false,
   "validthis": true,
+  "esnext": true,
 
   "strict": true,
   "globalstrict": true,
   "trailing": true,
   "eqnull": true,
 
-  "browser": false,
+  "browser": true,
   "devel": true,
   "jquery": true,
   "node": true
